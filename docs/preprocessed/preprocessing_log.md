@@ -5,4 +5,4 @@
 
 **Related script:** [`01_data_cleaning.ipynb`](../notebooks/01_data_cleaning.ipynb)
 
-**Output dataset:** [`customer_data.csv`]()
+**Output dataset:** [`customer_preprocessed.parquet`]()
