@@ -19,13 +19,12 @@ def df_summary(dataframe: pd.DataFrame):
 
     Returns
     -------
-    pandas.DataFrame
-        Column-level summary including:
-        - dtype
-        - non-null count
-        - null count
-        - null percentage
-        - unique values.
+    Column-level summary including:
+    - dtype
+    - unique values
+    - non-null count
+    - null count
+    - null percentage
     """
 
     rows, cols = dataframe.shape
