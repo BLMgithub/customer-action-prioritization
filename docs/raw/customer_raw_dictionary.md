@@ -1,10 +1,10 @@
 ## Customer Raw Dictionary
 
+**Doc scope:** Source notes and Field dictionary for reference for [`customer_raw.parquet`](../../data/raw/customer_raw.parquet) or [`Online Retail.xlsx`](../../data/raw/Online%20Retail.xlsx)
+
 Source: UCI Machine Learning Repository  
 Description: UK based online retail transactional data  
 Coverage: 01/12/2010 – 09/12/2011
-
-Doc scope: Field dictionary for reference for [`customer_raw.parquet`](../../data/raw/customer_raw.parquet) or [`Online Retail.xlsx`](../../data/raw/Online%20Retail.xlsx)
 
 | Field Name | Data  Type | Description |
 | --- | --- | --- |

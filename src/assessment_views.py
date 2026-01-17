@@ -16,15 +16,17 @@ def df_summary(dataframe: pd.DataFrame):
     Parameters
     ----------
     df : pandas.DataFrame
+        Input DataFrame.
 
     Returns
     -------
-    Column-level summary including:
-    - dtype
-    - unique values
-    - non-null count
-    - null count
-    - null percentage
+    str
+        Formatted column-level summary including:
+        - dtype
+        - unique values
+        - non-null count
+        - null count
+        - null percentage
     """
 
     rows, cols = dataframe.shape
@@ -53,20 +55,29 @@ def df_summary(dataframe: pd.DataFrame):
 def print_tabulate(data: pd.Series | pd.DataFrame, heading: str = (), title: str = None):
 
     """
-    Prints a formatted table using the tabulate library, with an optional heading and title.
+    Return a formatted table for visual data assessment.
 
-    Preset parameters
-    -----------------
-    - table format: 'pretty'
-    - show index: 'False'
+    Parameters
+    ----------
+    df : pandas.DataFrame
+        Input dataframe to summarize.
+    headers : list or str, optional
+        Column headers configuration passed to `tabulate`.
+        - "firstrow": use first row as headers
+        - "keys": use column names as headers
+    title : str, optional
+        Optional title displayed above the table.
 
-    headers:
-    --------
-        can be an explicit list of column headers
-        - if `headers="firstrow"`, then the first row of data is used
-        - if `headers="keys"`, then dictionary keys or column indices are used
+    Returns
+    -------
+    str
+        Formatted table representation for visual inspection.
 
-    All other parameters follow the default behavior of the `tabulate` library.
+    Notes
+    -----
+    - Table format defaults to 'pretty'.
+    - Index display is disabled by default.
+    - All other parameters follow the default behavior of the `tabulate` library.
     """
 
     print(title)
@@ -78,3 +89,28 @@ def print_tabulate(data: pd.Series | pd.DataFrame, heading: str = (), title: str
             showindex = 'False'
         )
     )
+
+
+def df_shape(df: pd.DataFrame, title: str | None = None):
+    """
+    Print a formatted summary of a DataFrame's shape for visual inspection.
+
+    Parameters
+    ----------
+    df : pandas.DataFrame
+        Input DataFrame.
+    title : str, optional
+        Optional section title printed above the summary.
+
+    Returns
+    -------
+    None
+    """
+    shape = df.shape
+
+    if title:
+        print(title)
+        print('-' * len(title))
+
+    print(f'Total Rows: {shape[0]:,}')
+    print(f'Total Columns: {shape[1]:,}')
