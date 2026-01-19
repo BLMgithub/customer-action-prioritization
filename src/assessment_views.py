@@ -248,7 +248,7 @@ def feature_distribution_view(data: pd.DataFrame,
     format_percent = pad_list_to_length(format_percent, n_plots, default=False)
 
 
-    fig, axes = plt.subplots(nrows=n_rows, ncols=n_cols, figsize=(12, 4 * n_rows))
+    fig, axes = plt.subplots(nrows=n_rows, ncols=n_cols, figsize=(11, 3 * n_rows))
 
     # Ensure consistent indexing when only one row
     if n_rows == 1:
@@ -284,12 +284,15 @@ def feature_distribution_view(data: pd.DataFrame,
             axes[idx][0].xaxis.set_major_formatter(mtick.PercentFormatter(1.0))
             axes[idx][1].xaxis.set_major_formatter(mtick.PercentFormatter(1.0))
 
+
     # Add figure-level title if provided
     if suptitle:
         plt.suptitle(suptitle)
-        plt.tight_layout(rect= [0,0, 1,.99])
-
+        plt.tight_layout(rect=[0, 0, 1, 0.98])
     else:
         plt.tight_layout()
+
+    # Explicit vertical spacing between subplot rows
+    plt.subplots_adjust(hspace= 0.7)
 
     return fig, axes
