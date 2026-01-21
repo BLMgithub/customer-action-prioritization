@@ -164,6 +164,8 @@ def pad_list_to_length(_list, length, default= False):
         return _list
 
 
+
+
 def feature_distribution_view(data: pd.DataFrame, 
                               column: list[str],  
                               titles: list[str] = None, 
@@ -295,4 +297,62 @@ def feature_distribution_view(data: pd.DataFrame,
     # Explicit vertical spacing between subplot rows
     plt.subplots_adjust(hspace= 0.7)
 
+    return fig, axes
+
+
+
+
+def plot_silhouette_scores(cluster_range, silhouette_scores: list, title: str = None, xlabel: str = None, legend_label: str = None ):
+    """
+    Plots silhouette scores for a range of clustering solutions.
+
+    - Visualizes how the silhouette score varies across different numbers of clusters. 
+    - Highlights the best-performing cluster count with a vertical dashed line.
+
+    Parameters
+    ----------
+    cluster_range : list or array-like
+        A sequence of integers representing the number of clusters tested (e.g., range of k in KMeans).
+    
+    silhouette_scores : list or array-like
+        A list of silhouette scores corresponding to each value in `cluster_range`.
+    
+    title : str, optional
+        Title of the plot (default is None).
+    
+    xlabel : str, optional
+        Label for the x-axis (default is None).
+    
+    legend_label : str, optional
+        Label for the legend that annotates the best-performing cluster count 
+        (e.g., "k" or "n_components") (default is None).
+    """
+
+    fig, axes = plt.subplots(figsize= (12,5))
+    
+    plt.title(title)
+    
+    # Plot Silhouette score for each clusters
+    plt.plot(cluster_range, silhouette_scores, marker='o')
+    
+    # Adjust x-axis ticks to show up to max ticks
+    axes.xaxis.set_major_locator(plt.MaxNLocator(max(cluster_range)))
+    
+    plt.xlabel(xlabel)
+    plt.ylabel('Silhouette Score')
+    
+    # Add vertical line for cluster that has the highest Silhouette score
+    best_k = min(cluster_range) + silhouette_scores.index(max(silhouette_scores))
+    line_highest_sil = plt.axvline(best_k, color='black', linestyle='--', linewidth=2)
+    
+    # Add Custom Legend
+    plt.legend(handles=[line_highest_sil],
+               labels=[f'{legend_label} = {best_k}'],
+               fontsize=12,
+               frameon=True,
+               edgecolor='black')
+    
+    plt.grid(alpha=0.5)
+    plt.tight_layout()
+    
     return fig, axes
