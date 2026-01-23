@@ -2,7 +2,7 @@
 
 **Doc Scope:** Behavioral and decision-oriented justification for engineered features, outlining the behavioral dimensions each feature encodes and how those distinctions support customer segmentation and action prioritization under operational constraints.
 
-**Related script:** [`02_feature_engineering.ipynb`](../../notebooks/02_feature_engineering.ipynb)
+**Related Notebook:** [`02_feature_engineering.ipynb`](../../notebooks/02_feature_engineering.ipynb)
 
 **Output dataset:** [`customer_features.parquet`](../../data/preprocessed/customer_features.parquet)
 

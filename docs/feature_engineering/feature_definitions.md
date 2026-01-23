@@ -2,7 +2,7 @@
 
 **Doc Scope:** Field-level specification of engineered customer features, including precise definitions, calculation grain, and raw data dependencies. This document serves as the authoritative contract for feature construction and reproducibility following feature engineering.
 
-**Related script:** [`02_feature_engineering.ipynb`](../../notebooks/02_feature_engineering.ipynb)
+**Related Notebook:** [`02_feature_engineering.ipynb`](../../notebooks/02_feature_engineering.ipynb)
 
 **Output dataset:** [`customer_features.parquet`](../../data/preprocessed/customer_features.parquet)
 
