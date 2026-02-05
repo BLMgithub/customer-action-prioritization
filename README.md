@@ -51,9 +51,10 @@ Executive deliverable (decision narrative + recommendations): [`Executive Decisi
 - `docs/`
 
   - `analysis/decision_gates_and_enforcement.md` - source-of-truth decision framework
-  - `data_handling/` - preprocessing and data handling logs
-  - `feature_engineering/` - feature definitions and rationale
-  - `raw/` - source data documentation
+  - `data_handling/data_handling_log.md` - preprocessing and data handling logs
+  - `feature_engineering/feature_definitions.md` - feature definitions
+  - `feature_engineering/feature_rationale.md` - feature design rationale
+  - `raw/customer_raw_dictionary.md` - source data documentation
 
 - `notebooks/`
 
