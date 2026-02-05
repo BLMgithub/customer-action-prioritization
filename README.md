@@ -8,8 +8,6 @@ Using a decision-gated prioritization diagnostic, the analysis tests whether cus
 
 The focus is not on ranking customers or optimizing engagement strategies, but on protecting limited human capacity from misallocation driven by weak or non-defensible signals.
 
----
-
 ## What this repo demonstrates
 
 - Decision-grade prioritization diagnostics
@@ -20,22 +18,19 @@ The focus is not on ranking customers or optimizing engagement strategies, but o
 
 This work is structured to surface only signals that can safely change execution effort, and to explicitly rule out those that cannot.
 
----
-
 ## Decision context
 
 **Decision:**
 Whether customer-facing behavior justifies any escalation to differentiated handling under current execution constraints.
 
 **Mandate:**
-
 - Prevent wasted human effort under finite capacity
 - Treat misclassification cost as material
 - Accept inaction as a valid and deliberate outcome
 
 Executive deliverable (decision narrative + recommendations): [`Executive Decision Summary (Website)`](https://bryan-melvida.notion.site/Behavior-Driven-Prioritization-Under-Constraints-2e8b722615b48039965fd73aa2741cfb)
 
----
+
 ## Deliverables
 - Executive Summary (Website Format) 
 - Decision framework and enforcement contract
@@ -43,7 +38,6 @@ Executive deliverable (decision narrative + recommendations): [`Executive Decisi
 - Decision-ready customer behavior profile 
 - Documented assumptions and exclusions
 
----
 
 ## Repository structure
 
@@ -72,8 +66,6 @@ Executive deliverable (decision narrative + recommendations): [`Executive Decisi
 - `src/`
 
   - shared plotting and assessment utilities used across notebooks
-
----
 
 ## Scope boundaries
 
