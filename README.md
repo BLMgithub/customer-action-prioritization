@@ -67,6 +67,31 @@ Executive deliverable (decision narrative + recommendations): [`Executive Decisi
 
   - shared plotting and assessment utilities used across notebooks
 
+
+## How the analysis is structured
+
+- `01_data_cleaning.ipynb`
+   - Validate transactional integrity and structural consistency  
+   - Correct issues that materially affect behavioral interpretation  
+   - Establish a reliable analytical base  
+
+- `02_feature_engineering.ipynb`
+   - Translate transactions into customer-level behavioral signals  
+   - Encode timing, persistence, and efficiency in an interpretable feature set  
+
+- `03_dimensionality_reduction.ipynb`
+   - Test variance-based transformations against the scaled base features  
+   - Decide whether dimensionality reduction preserves behavioral structure  
+
+- `04_clustering_analysis.ipynb`
+   - Assess whether behavioral features support defensible segmentation under finite capacity  
+   - Accept or constrain clusters based on clear behavioral separation  
+
+- `05_prioritization_analysis.ipynb`
+   - Map behavioral differences to execution-relevant treatment constraints  
+   - Block differentiation where signals do not justify action  
+
+
 ## Scope boundaries
 
 This project intentionally does not:
