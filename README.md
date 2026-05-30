@@ -4,19 +4,9 @@
 
 This project evaluates whether customer-facing effort should be differentiated based on observed behavioral patterns under finite execution capacity.
 
-Using a decision-gated prioritization diagnostic, the analysis tests whether customer behavior demonstrates defensible, stable, and actionable differences that justify varying levels of execution effort. Where such justification does not exist, standardized or automated handling is explicitly enforced.
+The analysis uses a decision gate prioritization diagnostic to test whether customer behavior demonstrates actionable differences that justify varying levels of execution effort. When justification is absent, the analysis enforces standardized or automated handling. This protects limited human capacity from misallocation against indefensible signals, rather than ranking customers or optimizing engagement strategies.
 
-The focus is not on ranking customers or optimizing engagement strategies, but on protecting limited human capacity from misallocation driven by weak or non-defensible signals.
-
-## What this repo demonstrates
-
-- Decision-grade prioritization diagnostics
-- Capacity-first problem framing
-- Governance and enforcement before optimization
-- Evidence-based rejection of unjustified differentiation
-- Clear separation between exploration and permission
-
-This work is structured to surface only signals that can safely change execution effort, and to explicitly rule out those that cannot.
+The pipeline surfaces only signals that can change execution effort and explicitly rules out those that cannot.
 
 ## Decision context
 
@@ -28,46 +18,14 @@ Whether customer-facing behavior justifies any escalation to differentiated hand
 - Treat misclassification cost as material
 - Accept inaction as a valid and deliberate outcome
 
-Executive deliverable (decision narrative + recommendations): [`Executive Decision Summary (Website)`](https://bryan-melvida.notion.site/Behavior-Driven-Prioritization-Under-Constraints-2e8b722615b48039965fd73aa2741cfb)
-
+> Executive deliverable (decision narrative + recommendations): [`Executive Decision Summary (Website)`](https://bryan-melvida.super.site/data-analytics/customer-effort-prioritization-diagnostic)
 
 ## Deliverables
 - Executive Summary (Website Format) 
 - Decision framework and enforcement contract
 - Prioritization diagnostic notebooks
-- Decision-ready customer behavior profile 
+- Decision ready customer behavior profile 
 - Documented assumptions and exclusions
-
-
-## Repository structure
-
-- `data/`
-
-  - `raw/` - original source data
-  - `cleaned/` - validated and cleaned datasets
-  - `preprocessed/` - feature-engineered datasets
-  - `final/` - decision-ready customer behavior profiles
-
-- `docs/`
-
-  - `analysis/decision_gates_and_enforcement.md` - source-of-truth decision framework
-  - `data_handling/data_handling_log.md` - preprocessing and data handling logs
-  - `feature_engineering/feature_definitions.md` - feature definitions
-  - `feature_engineering/feature_rationale.md` - feature design rationale
-  - `raw/customer_raw_dictionary.md` - source data documentation
-
-- `notebooks/`
-
-  - `01_data_cleaning.ipynb` - data validation and cleaning
-  - `02_feature_engineering.ipynb` - behavioral feature construction
-  - `03_dimensionality_reduction.ipynb` - structure viability testing
-  - `04_clustering_analysis.ipynb` - segmentation diagnostics
-  - `05_prioritization_analysis.ipynb` - decision enforcement and outcome
-
-- `src/`
-
-  - shared plotting and assessment utilities used across notebooks
-
 
 ## How the analysis is structured
 
@@ -89,13 +47,39 @@ Executive deliverable (decision narrative + recommendations): [`Executive Decisi
    - Accept or constrain clusters based on clear behavioral separation  
 
 - `05_prioritization_analysis.ipynb`
-   - Map behavioral differences to execution-relevant treatment constraints  
+   - Map behavioral differences to execution relevant treatment constraints  
    - Block differentiation where signals do not justify action  
 
+## Repository structure
+
+```
+├── data/
+│   ├── raw/                                   # original source data
+│   ├── cleaned/                               # validated and cleaned datasets
+│   ├── preprocessed/                          # feature-engineered datasets
+│   └── final/                                 # decision ready customer behavior profiles
+├── docs/
+│   ├── analysis/
+│   │   └── decision_gates_and_enforcement.md  # source-of-truth decision framework
+│   ├── data_handling/
+│   │   └── data_handling_log.md               # preprocessing and data handling logs
+│   ├── feature_engineering/
+│   │   ├── feature_definitions.md             # feature definitions
+│   │   └── feature_rationale.md               # feature design rationale
+│   └── raw/
+│       └── customer_raw_dictionary.md         # source data documentation
+├── notebooks/
+│   ├── 01_data_cleaning.ipynb                 # data validation and cleaning
+│   ├── 02_feature_engineering.ipynb           # behavioral feature construction
+│   ├── 03_dimensionality_reduction.ipynb      # structure viability testing
+│   ├── 04_clustering_analysis.ipynb           # segmentation diagnostics
+│   └── 05_prioritization_analysis.ipynb       # decision enforcement and outcome
+└── src/                                       # shared plotting and assessment utilities
+```
 
 ## Scope boundaries
 
-This project intentionally does not:
+This project intentionally does **not**:
 
 - Rank or score customers
 - Force segmentation where behavior does not support it
